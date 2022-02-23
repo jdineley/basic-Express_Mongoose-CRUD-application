@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add new Snare Drum</h1>
+
+    <form action="/products/new" method="POST">
+        <label for="manufacturer">Manufacture</label>
+        <input type="text" name="manufacturer" id="manufacturer">
+
+        <label for="material">Material</label>
+        <input type="text" name="material" id="material">
+
+        <label for="diameter">Diameter</label>
+        <select name="diameter" id="diameter">
+            <% for(let dia of schemaObj.diameter.enum){ %>
+                <option value="<%=dia%>"><%=dia%></option>
+                <% } %>
+        </select>
+
+        <label for="depth">Depth</label>
+        <select name="depth" id="depth">
+            <% for(let depth of schemaObj.depth.enum){ %>
+                <option value="<%=depth%>"><%=depth%></option>
+                <% } %>
+        </select>
+
+        <label for="catergory1">Catergory 1</label>
+        <input type="text" name="catergory1" id="catergory1">
+        <label for="catergory2">Catergory 2</label>
+        <input type="text" name="catergory2" id="catergory2">
+
+        <label for="qtyInStore">Instore Qty</label>
+        <input type="text" name="qtyInStore" id="qtyInStore">
+        <label for="qtyOnLine">Online Qty</label>
+        <input type="text" name="qtyOnLine" id="qtyOnLine">
+
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price">
+
+        <button>Submit</button>
+    </form>
+
+    <a href="/">Back to home</a>
+
+</body>
+</html>

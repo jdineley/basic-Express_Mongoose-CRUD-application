@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%=product.manufacturer%> snare drum with _id:<%=product._id%></h1>
+    <ul>
+        <li><b>Material:</b> <%=product.material%></li>
+        <li><b>Diameter:</b> <%=product.diameter%></li>
+        <li><b>Depth:</b> <%=product.depth%></li>
+        <li><b>Categories:</b>
+            <ul>
+            <% for(let cat of product.categories) {%>
+                <li><%=cat%></li>
+            <%}%>
+            </ul>
+        </li>
+        <li><b>Price:</b> <%=product.price%></li>
+    </ul>
+
+    <form action="/products/<%= product._id %>/edit" method="GET" >
+        <button>Edit</button>
+    </form>
+
+    <form action="/products/<%= product._id %>?_method=DELETE" method="POST" >
+        <button>Delete</button>
+    </form>
+
+    <a href="/products?material=<%=product.material%>">All <%=product.material%> drums</a>
+
+</body>
+</html>

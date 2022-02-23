@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Choose a snare material</h1>
+    <form action="/products">
+        <label for="material">Select Material</label>
+        <select name="material" id="material">
+            <% for(let material of categories){ %>
+            <option value="<%=material%>"><%=material%></option>
+            <% } %>
+        </select>
+        <button>Submit</button>
+    </form>
+    <p>All Snare Drums: <a href="/products">Click Here</a></p>
+    <a href="/products/new">Add new Snare Drum</a>
+</body>
+</html>
